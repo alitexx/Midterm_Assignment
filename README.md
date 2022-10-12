@@ -1,6 +1,6 @@
 # Midterm_Assignment
 
-*Pseudo Code*
+*Brainstorming*
 - First-Person
 - Running a Maze
 - Timer that ends the game if it reaches zero
