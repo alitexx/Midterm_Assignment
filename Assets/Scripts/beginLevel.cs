@@ -25,7 +25,7 @@ public class beginLevel : MonoBehaviour
             StartCoroutine(FadeBlackOutSquare(false));
         }
     }
-    public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, int fadeSpeed = 5)
+    public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, bool beginLevel = false, int fadeSpeed = 5)
     {
         Color objectColor = blackOutSquare.GetComponent<Image>().color;
         float fadeAmount;
