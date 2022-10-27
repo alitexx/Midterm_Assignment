@@ -7,23 +7,19 @@ public class beginLevel : MonoBehaviour
 {
 
     public GameObject blackOutSquare;
+    public GameObject startUI;
+
+    [SerializeField]
+    private Text _title;
     // Start is called before the first frame update
     void Start()
     {
-        //when level starts, flash a "level #" screen before it fades to black, giving the player
-        //control of their character
-    }
+        StartCoroutine(FadeBlackOutSquare(false)); // to fade out
+        Debug.Log("Level " + globalVariables.playerLevel.ToString());
+        _title.text = "Level " + globalVariables.playerLevel.ToString();
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            StartCoroutine(FadeBlackOutSquare());
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            StartCoroutine(FadeBlackOutSquare(false));
-        }
+        Invoke("fadeOut", 3);
+        //StartCoroutine(FadeBlackOutSquare()); // to fade in
     }
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, bool beginLevel = false, int fadeSpeed = 5)
     {
@@ -51,5 +47,32 @@ public class beginLevel : MonoBehaviour
                 yield return null;
             }
         }
+    }
+
+    public IEnumerator waitCommand(int waitTime)
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(waitTime);
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+    }
+
+    public void fadeOut()
+    {
+        StartCoroutine(FadeBlackOutSquare());
+        Invoke("destroyUI", 1);
+    }
+    public void destroyUI()
+    {
+        startUI.SetActive(false);
+        Invoke("fadeBack", 1);
+    }
+    public void fadeBack()
+    {
+        StartCoroutine(FadeBlackOutSquare(false));
     }
 }

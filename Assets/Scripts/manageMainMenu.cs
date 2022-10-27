@@ -20,10 +20,8 @@ public class manageMainMenu : MonoBehaviour
     }
     public void loadLevel(string sceneName)
     {
-        //StartCoroutine(FadeBlackOutSquare(sceneName)); // to fade in
+        StartCoroutine(FadeBlackOutSquare(sceneName)); // to fade in
         //StartCoroutine(FadeBlackOutSquare("", false)); // to fade out
-        //System.Threading.Thread.Sleep(5000); // sleep function, not working atm
-        SceneManager.LoadScene(sceneName);
     }
 
     public IEnumerator FadeBlackOutSquare(string beginLevel = "", bool fadeToBlack = true, int fadeSpeed = 5)
@@ -43,6 +41,12 @@ public class manageMainMenu : MonoBehaviour
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
                 blackOutSquare.GetComponent<Image>().color = objectColor;
                 yield return null;
+            }
+
+            while (blackOutSquare.GetComponent<Image>().color.a >= 1) {
+                Debug.Log("I have loaded the level!");
+                SceneManager.LoadScene(beginLevel);
+                break;
             }
         }
         else
