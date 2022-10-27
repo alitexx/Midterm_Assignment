@@ -10,7 +10,7 @@ public class manageMainMenu : MonoBehaviour
     public GameObject blackOutSquare;
     private void Start()
     {
-        Time.timeScale = 1f;
+        StartCoroutine(FadeBlackOutSquare("", false)); // to fade out
     }
 
     public void endGame()
@@ -21,8 +21,7 @@ public class manageMainMenu : MonoBehaviour
     public void loadLevel(string sceneName)
     {
         StartCoroutine(FadeBlackOutSquare(sceneName)); // to fade in
-        //StartCoroutine(FadeBlackOutSquare("", false)); // to fade out
-    }
+        }
 
     public IEnumerator FadeBlackOutSquare(string beginLevel = "", bool fadeToBlack = true, int fadeSpeed = 5)
     {

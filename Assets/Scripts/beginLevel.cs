@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class beginLevel : MonoBehaviour
 {
@@ -18,8 +19,8 @@ public class beginLevel : MonoBehaviour
         Debug.Log("Level " + globalVariables.playerLevel.ToString());
         _title.text = "Level " + globalVariables.playerLevel.ToString();
 
+
         Invoke("fadeOut", 3);
-        //StartCoroutine(FadeBlackOutSquare()); // to fade in
     }
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, bool beginLevel = false, int fadeSpeed = 5)
     {
@@ -75,4 +76,5 @@ public class beginLevel : MonoBehaviour
     {
         StartCoroutine(FadeBlackOutSquare(false));
     }
+
 }

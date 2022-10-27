@@ -7,10 +7,10 @@ public class finishLevel : MonoBehaviour
 {
     void OnTriggerEnter(Collider otherModel)
     {
-        Debug.Log(otherModel.tag);
         if (otherModel.tag == "Player")
         {
             globalVariables.playerLevel++;
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("LevelCleared");
         }
     }
