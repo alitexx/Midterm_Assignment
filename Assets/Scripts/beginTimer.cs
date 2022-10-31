@@ -8,26 +8,23 @@ public class beginTimer : MonoBehaviour
 {
     [SerializeField]
     private Text _timer;
-    private float timeLeft = 120;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+
+    
 
     // Update is called once per frame
     void Update()
     {
         
-        if (timeLeft > 0)
+        if (globalVariables.timeLeft > 0 && pauseScript.isPaused == false)
         {
-            timeLeft -= Time.deltaTime;
-            _timer.text = ((int)(timeLeft)).ToString();
+            globalVariables.timeLeft -= Time.deltaTime;
+            _timer.text = ((int)(globalVariables.timeLeft)).ToString();
 
         }
-        else if (timeLeft < 0) // if timer hits 0, player loses
+        else if (globalVariables.timeLeft < 0) // if timer hits 0, player loses
         {
-            timeLeft = 0;
+            globalVariables.timeLeft = 0;
             SceneManager.LoadScene("LevelFailed");
         }
     }

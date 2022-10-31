@@ -11,7 +11,13 @@ public class finishLevel : MonoBehaviour
         {
             globalVariables.playerLevel++;
             Cursor.lockState = CursorLockMode.None;
+            globalVariables.timeLeft = 185 - (globalVariables.playerLevel * 5);
+            if (globalVariables.timeLeft < 120)
+            {
+                globalVariables.timeLeft = 120;
+            }
             SceneManager.LoadScene("LevelCleared");
+            
         }
     }
 

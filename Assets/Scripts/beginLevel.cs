@@ -15,12 +15,14 @@ public class beginLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        blackOutSquare.SetActive(true);
+        startUI.SetActive(true);
         StartCoroutine(FadeBlackOutSquare(false)); // to fade out
         Debug.Log("Level " + globalVariables.playerLevel.ToString());
         _title.text = "Level " + globalVariables.playerLevel.ToString();
 
 
-        Invoke("fadeOut", 3);
+        Invoke("fadeOut", 2);
     }
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, bool beginLevel = false, int fadeSpeed = 5)
     {
@@ -49,19 +51,6 @@ public class beginLevel : MonoBehaviour
             }
         }
     }
-
-    public IEnumerator waitCommand(int waitTime)
-    {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(waitTime);
-
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-    }
-
     public void fadeOut()
     {
         StartCoroutine(FadeBlackOutSquare());
