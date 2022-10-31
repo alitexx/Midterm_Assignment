@@ -9,6 +9,7 @@ public class beginLevel : MonoBehaviour
 
     public GameObject blackOutSquare;
     public GameObject startUI;
+    public GameObject player;
 
     [SerializeField]
     private Text _title;
@@ -21,6 +22,18 @@ public class beginLevel : MonoBehaviour
         Debug.Log("Level " + globalVariables.playerLevel.ToString());
         _title.text = "Level " + globalVariables.playerLevel.ToString();
 
+        if (globalVariables.playerLevel == 1)
+        {
+            player.transform.position = new Vector3(-6, 1, -18);
+        }
+        else if (globalVariables.playerLevel == 2)
+        {
+            player.transform.position = new Vector3(18, 1, 23);
+        }
+        else
+        {
+            player.transform.position = new Vector3(-6, 1, -18);
+        }
 
         Invoke("fadeOut", 2);
     }

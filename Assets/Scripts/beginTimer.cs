@@ -9,9 +9,6 @@ public class beginTimer : MonoBehaviour
     [SerializeField]
     private Text _timer;
     
-
-    
-
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +22,7 @@ public class beginTimer : MonoBehaviour
         else if (globalVariables.timeLeft < 0) // if timer hits 0, player loses
         {
             globalVariables.timeLeft = 0;
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("LevelFailed");
         }
     }
