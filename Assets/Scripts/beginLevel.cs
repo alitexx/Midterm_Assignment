@@ -13,9 +13,13 @@ public class beginLevel : MonoBehaviour
 
     [SerializeField]
     private Text _title;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        
         blackOutSquare.SetActive(true);
         startUI.SetActive(true);
         StartCoroutine(FadeBlackOutSquare(false)); // to fade out
