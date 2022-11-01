@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Collisions : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Collisions : MonoBehaviour
     public GameObject gameCompletedDoor1;
     public GameObject door2;
     public GameObject gameCompletedDoor2;
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Food")
