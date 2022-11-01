@@ -13,6 +13,7 @@ public class pauseScript : MonoBehaviour
 
     private void Start()
     {
+        isPaused = false;
         Time.timeScale = 1f;
         menu.SetActive(false);
     }
@@ -27,12 +28,9 @@ public class pauseScript : MonoBehaviour
     }
     public void endGame()
     {
+        TogglePauseGame();
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("TitleScreen");
-    }
-
-    public void loadLevel(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
     }
 
     public void TogglePauseGame()

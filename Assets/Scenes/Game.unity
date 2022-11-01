@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4513716, g: 0.5004076, b: 0.5698752, a: 1}
+  m_IndirectSpecularColor: {r: 0.45137197, g: 0.5004082, b: 0.569876, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6104,10 +6104,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1425228453}
-        m_TargetAssemblyTypeName: manageMainMenu, Assembly-CSharp
-        m_MethodName: loadLevel
-        m_Mode: 5
+      - m_Target: {fileID: 1425228458}
+        m_TargetAssemblyTypeName: pauseScript, Assembly-CSharp
+        m_MethodName: endGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
