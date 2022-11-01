@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Collisions : MonoBehaviour
 {
-    public GameObject door;
-    public GameObject gameCompletedDoor;
+    public GameObject door1;
+    public GameObject gameCompletedDoor1;
+    public GameObject door2;
+    public GameObject gameCompletedDoor2;
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Food")
@@ -16,9 +18,17 @@ public class Collisions : MonoBehaviour
             if (globalVariables.itemsCollected >= 3)
             {
                 //hide current door, reveal ending door
-                door.SetActive(false);
-                gameCompletedDoor.SetActive(true);
-}
+                if (globalVariables.playerLevel == 1) {
+                    door1.SetActive(false);
+                    gameCompletedDoor1.SetActive(true);
+                }
+                if (globalVariables.playerLevel == 2)
+                {
+                    door2.SetActive(false);
+                    gameCompletedDoor2.SetActive(true);
+                }
+
+            }
         }
 
     }
