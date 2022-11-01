@@ -11,6 +11,8 @@ public class updateFruitCollectionGUI : MonoBehaviour
     private int lastKnownFruitVal = 0;
     private void Start()
     {
+        maxNumberOfFruit = 2;
+        lastKnownFruitVal = 0;
         maxNumberOfFruit = maxNumberOfFruit + globalVariables.playerLevel;
         _overheadGUI.text = ((maxNumberOfFruit).ToString() + " Fruit Left");
 
