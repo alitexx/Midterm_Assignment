@@ -12975,7 +12975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackOutSquare: {fileID: 1775411724}
   startUI: {fileID: 692839338}
-  player: {fileID: 0}
+  player: {fileID: 1392872745}
   _title: {fileID: 2059019833}
 --- !u!114 &1425228453
 MonoBehaviour:
@@ -17352,7 +17352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2050599145
 MonoBehaviour:
   m_ObjectHideFlags: 0
