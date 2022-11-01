@@ -7,7 +7,7 @@ public class updateFruitCollectionGUI : MonoBehaviour
 {
     [SerializeField]
     private Text _overheadGUI;
-    private int maxNumberOfFruit = 2;
+    public static int maxNumberOfFruit = 2;
     private int lastKnownFruitVal = 0;
     private void Start()
     {

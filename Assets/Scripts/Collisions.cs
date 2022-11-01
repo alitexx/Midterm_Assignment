@@ -17,7 +17,7 @@ public class Collisions : MonoBehaviour
             Destroy(collision.gameObject);
             globalVariables.itemsCollected++;
             // checks if the player has unlocked the ending yet
-            if (globalVariables.itemsCollected >= 3)
+            if (globalVariables.itemsCollected >= updateFruitCollectionGUI.maxNumberOfFruit)
             {
                 //hide current door, reveal ending door
                 if (globalVariables.playerLevel == 1) {
