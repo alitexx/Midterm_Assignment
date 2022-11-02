@@ -8,7 +8,11 @@ public class beginTimer : MonoBehaviour
 {
     [SerializeField]
     private Text _timer;
-    
+    private void Start()
+    {
+        globalVariables.timeLeft = 185 - (globalVariables.playerLevel * 5);
+    }
+
     // Update is called once per frame
     void Update()
     {
