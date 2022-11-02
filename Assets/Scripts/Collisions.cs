@@ -9,6 +9,7 @@ public class Collisions : MonoBehaviour
     public GameObject gameCompletedDoor1;
     public GameObject door2;
     public GameObject gameCompletedDoor2;
+    public AudioSource gainSound;
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -16,6 +17,7 @@ public class Collisions : MonoBehaviour
         {
             Destroy(collision.gameObject);
             globalVariables.itemsCollected++;
+            gainSound.Play();
             // checks if the player has unlocked the ending yet
             if (globalVariables.itemsCollected >= updateFruitCollectionGUI.maxNumberOfFruit)
             {
