@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class manageMainMenu : MonoBehaviour
 {
     public GameObject blackOutSquare;
+    private bool debounce = true;
     private void Start()
     {
         StartCoroutine(FadeBlackOutSquare("", false)); // to fade out
@@ -20,7 +21,11 @@ public class manageMainMenu : MonoBehaviour
     }
     public void loadLevel(string sceneName)
     {
-        StartCoroutine(FadeBlackOutSquare(sceneName)); // to fade in
+        if (debounce == true) // was firing multiple times
+        {
+            debounce = false;
+            StartCoroutine(FadeBlackOutSquare(sceneName)); // to fade in
+        }
         }
 
     public IEnumerator FadeBlackOutSquare(string beginLevel = "", bool fadeToBlack = true, int fadeSpeed = 5)

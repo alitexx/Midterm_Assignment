@@ -9,8 +9,7 @@ public class finishLevel : MonoBehaviour
     {
         if (otherModel.tag == "Player")
         {
-            Debug.Log(otherModel.tag);
-            globalVariables.playerLevel++;
+            globalVariables.playerLevel = 2; // CHANGE IF MORE LEVELS ARE ADDED!!!! works for now
             Cursor.lockState = CursorLockMode.None;
             globalVariables.timeLeft = 185 - (globalVariables.playerLevel * 5);
             globalVariables.itemsCollected = 0;

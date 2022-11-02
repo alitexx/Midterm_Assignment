@@ -30,6 +30,8 @@ public class pauseScript : MonoBehaviour
     {
         TogglePauseGame();
         Cursor.lockState = CursorLockMode.None;
+        globalVariables.timeLeft = 185 - (globalVariables.playerLevel * 5);
+        globalVariables.itemsCollected = 0;
         SceneManager.LoadScene("TitleScreen");
     }
 

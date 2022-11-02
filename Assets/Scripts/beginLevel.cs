@@ -26,17 +26,20 @@ public class beginLevel : MonoBehaviour
         Debug.Log("Level " + globalVariables.playerLevel.ToString());
         _title.text = "Level " + globalVariables.playerLevel.ToString();
 
-        if (globalVariables.playerLevel == 1)
+        switch (globalVariables.playerLevel)
         {
-            player.transform.position = new Vector3(-6, 1, -18);
-        }
-        else if (globalVariables.playerLevel == 2)
-        {
-            player.transform.position = new Vector3(18, 1, 23);
-        }
-        else
-        {
-            player.transform.position = new Vector3(-6, 1, -18);
+            case 1:
+                Debug.Log("WHYA RE YOU RUNNING?>!?!?!?");
+                player.transform.position = new Vector3(-6, 1, -18);
+                break;
+            case 2:
+                Debug.Log("should be running");
+                player.transform.position = new Vector3(18, 1, 23);
+                break;
+            default:
+                Debug.Log("i mean. it works");
+                player.transform.position = new Vector3(18, 1, 23);
+                break;
         }
 
         Invoke("fadeOut", 2);
